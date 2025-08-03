@@ -1,4 +1,4 @@
-# Brevo (SendInBlue) webhook handler for [WHEP](https://github.com/Erwane/whep-brevo) project
+# [Brevo](https://www.brevo.com/) (SendInBlue) webhook handler for [WHEP](https://github.com/Erwane/whep-brevo) project
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 [![codecov](https://codecov.io/gh/Erwane/whep-brevo/branch/1.x/graph/badge.svg?token=hF5HhETnkg)](https://codecov.io/gh/Erwane/whep-brevo)
@@ -6,7 +6,7 @@
 [![Packagist Downloads](https://img.shields.io/packagist/dt/Erwane/whep-brevo)](https://packagist.org/packages/Erwane/whep-brevo)
 [![Packagist Version](https://img.shields.io/packagist/v/Erwane/whep-brevo)](https://packagist.org/packages/Erwane/whep-brevo)
 
-Webhook handler for Brevo (SendInBlue) emailing provider.
+Webhook handler for [Brevo](https://www.brevo.com/) (SendInBlue) emailing provider.
 
 ## Usage
 
