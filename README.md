@@ -1,7 +1,7 @@
 # [Brevo](https://www.brevo.com/) (SendInBlue) webhook handler for [WHEP](https://github.com/Erwane/whep-brevo) project
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
-[![codecov](https://codecov.io/gh/Erwane/whep-brevo/branch/1.x/graph/badge.svg?token=hF5HhETnkg)](https://codecov.io/gh/Erwane/whep-brevo)
+[![codecov](https://codecov.io/gh/Erwane/whep-brevo/branch/1.x/graph/badge.svg?token=YCGYJQYBXR)](https://codecov.io/gh/Erwane/whep-brevo)
 [![Build Status](https://github.com/Erwane/whep-brevo/actions/workflows/ci.yml/badge.svg?branch=1.x)](https://github.com/Erwane/whep-brevo/actions)
 [![Packagist Downloads](https://img.shields.io/packagist/dt/Erwane/whep-brevo)](https://packagist.org/packages/Erwane/whep-brevo)
 [![Packagist Version](https://img.shields.io/packagist/v/Erwane/whep-brevo)](https://packagist.org/packages/Erwane/whep-brevo)
