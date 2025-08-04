@@ -20,7 +20,7 @@ use WHEP\ProviderInterface;
  */
 class Brevo extends AbstractProvider
 {
-    protected $_typesMap = [
+    protected array $_typesMap = [
         'request' => ProviderInterface::EVENT_REQUEST,
         'delivered' => ProviderInterface::EVENT_SENT,
         'unique_opened' => ProviderInterface::EVENT_OPENED,
@@ -44,11 +44,6 @@ class Brevo extends AbstractProvider
     protected function _load(array $data): void
     {
         parent::_load($data);
-
-        $event = $data['event'] ?? null;
-
-        // Type
-        $this->_type = $this->_typesMap[$event] ?? ProviderInterface::EVENT_ERROR;
 
         $this->_recipient = $data['email'] ?? null;
 
