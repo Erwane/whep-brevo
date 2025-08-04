@@ -10,11 +10,15 @@ declare(strict_types=1);
 
 namespace WHEP\Test\TestCase;
 
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use ResourceHelper\File;
 use WHEP\Client;
+use WHEP\Provider\Brevo;
 use WHEP\ProviderInterface;
 
+#[CoversClass(Brevo::class)]
 class BrevoTest extends TestCase
 {
     public static function dataTypesMap(): array
@@ -83,7 +87,7 @@ class BrevoTest extends TestCase
         ];
     }
 
-    /** @dataProvider dataTypesMap */
+    #[DataProvider('dataTypesMap')]
     public function testTypesMap($event, $expected): void
     {
         $p = Client::getProvider('brevo');
@@ -169,7 +173,7 @@ class BrevoTest extends TestCase
         ];
     }
 
-    /** @dataProvider dataLoad */
+    #[DataProvider('dataLoad')]
     public function testLoad($resource, $type, $recipient, $details, $smtp, $url): void
     {
         $json = File::getContent($resource);
