@@ -38,6 +38,11 @@ class Brevo extends AbstractProvider
         'blocked' => ProviderInterface::EVENT_BLOCKED,
     ];
 
+    protected array $_allowedIpAndNetwork = [
+        '1.179.112.0/20',
+        '172.246.240.0/20',
+    ];
+
     /**
      * @inheritDoc
      */

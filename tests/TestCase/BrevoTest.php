@@ -14,13 +14,20 @@ use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use ResourceHelper\File;
-use WHEP\Client;
+use WHEP\Factory;
 use WHEP\Provider\Brevo;
 use WHEP\ProviderInterface;
 
 #[CoversClass(Brevo::class)]
 class BrevoTest extends TestCase
 {
+    public function testCheckIp(): void
+    {
+        $p = Factory::provider('brevo', ['client_ip' => '1.179.121.81']);
+        $p->process([]);
+        $this->assertTrue($p->__debugInfo()['client_ip_checked']);
+    }
+
     public static function dataTypesMap(): array
     {
         return [
@@ -90,7 +97,7 @@ class BrevoTest extends TestCase
     #[DataProvider('dataTypesMap')]
     public function testTypesMap($event, $expected): void
     {
-        $p = Client::getProvider('brevo');
+        $p = Factory::provider('brevo', ['check_ip' => false]);
         $p->process(['event' => $event]);
         $this->assertEquals($expected, $p->getType());
     }
@@ -179,7 +186,7 @@ class BrevoTest extends TestCase
         $json = File::getContent($resource);
         $data = json_decode($json, true);
 
-        $p = Client::getProvider('brevo');
+        $p = Factory::provider('brevo', ['check_ip' => false]);
         $p->process($data);
 
         $this->assertEquals($type, $p->getType());
