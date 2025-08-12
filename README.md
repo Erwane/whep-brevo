@@ -1,8 +1,8 @@
 # [Brevo](https://www.brevo.com/) (SendInBlue) webhook handler for [WHEP](https://github.com/Erwane/whep-brevo) project
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
-[![codecov](https://codecov.io/gh/Erwane/whep-brevo/branch/2.1/graph/badge.svg?token=YCGYJQYBXR)](https://codecov.io/gh/Erwane/whep-brevo)
-[![Build Status](https://github.com/Erwane/whep-brevo/actions/workflows/ci.yml/badge.svg?branch=2.1)](https://github.com/Erwane/whep-brevo/actions)
+[![codecov](https://codecov.io/gh/Erwane/whep-brevo/graph/badge.svg?token=YCGYJQYBXR)](https://codecov.io/gh/Erwane/whep-brevo)
+[![CI](https://github.com/Erwane/whep-brevo/actions/workflows/ci.yml/badge.svg)](https://github.com/Erwane/whep-brevo/actions)
 [![Packagist Downloads](https://img.shields.io/packagist/dt/Erwane/whep-brevo)](https://packagist.org/packages/Erwane/whep-brevo)
 [![Packagist Version](https://img.shields.io/packagist/v/Erwane/whep-brevo)](https://packagist.org/packages/Erwane/whep-brevo)
 
@@ -15,8 +15,8 @@ composer require erwane/whep-brevo
 ```
 
 ```php
-use WHEP\Exception\IpException;  
-use WHEP\Exception\ProviderException;  
+use WHEP\Exception\SecurityException;  
+use WHEP\Exception\WHEPException;  
 use WHEP\Factory;  
 
 try {
@@ -36,9 +36,9 @@ try {
     
     // Launch callbacks
     $provider->callback();
-} catch (IpException $e) {
+} catch (SecurityException $e) {
     // log ?
-} catch (ProviderException $e) {
+} catch (WHEPException $e) {
     // log ?
 }
 ```

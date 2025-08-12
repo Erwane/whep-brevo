@@ -25,7 +25,7 @@ class BrevoTest extends TestCase
     {
         $p = Factory::provider('brevo', ['client_ip' => '1.179.121.81']);
         $p->process([]);
-        $this->assertTrue($p->__debugInfo()['client_ip_checked']);
+        $this->assertTrue($p->securityChecked());
     }
 
     public static function dataTypesMap(): array
