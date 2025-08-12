@@ -15,8 +15,8 @@ composer require erwane/whep-brevo
 ```
 
 ```php
-use WHEP\Exception\IpException;  
-use WHEP\Exception\ProviderException;  
+use WHEP\Exception\SecurityException;  
+use WHEP\Exception\WHEPException;  
 use WHEP\Factory;  
 
 try {
@@ -36,9 +36,9 @@ try {
     
     // Launch callbacks
     $provider->callback();
-} catch (IpException $e) {
+} catch (SecurityException $e) {
     // log ?
-} catch (ProviderException $e) {
+} catch (WHEPException $e) {
     // log ?
 }
 ```

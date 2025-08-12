@@ -20,9 +20,6 @@ use WHEP\ProviderInterface;
  */
 class Brevo extends AbstractProvider
 {
-    /**
-     * @var array
-     */
     protected $_typesMap = [
         'request' => ProviderInterface::EVENT_REQUEST,
         'delivered' => ProviderInterface::EVENT_SENT,
@@ -41,13 +38,20 @@ class Brevo extends AbstractProvider
         'blocked' => ProviderInterface::EVENT_BLOCKED,
     ];
 
-    /**
-     * @var array
-     */
     protected $_allowedIpAndNetwork = [
         '1.179.112.0/20',
         '172.246.240.0/20',
     ];
+
+    /**
+     * @inheritDoc
+     */
+    public function checkSecurity(array $data): ProviderInterface
+    {
+        $this->_checkClientIp($this->_config['client_ip']);
+
+        return $this;
+    }
 
     /**
      * @inheritDoc
