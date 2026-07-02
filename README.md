@@ -8,6 +8,10 @@
 
 Webhook handler for [Brevo](https://www.brevo.com/) (SendInBlue) emailing provider.
 
+## Deprecated
+
+Use `erwane/whep`. https://github.com/Erwane/whep
+
 ## Usage
 
 ```shell
